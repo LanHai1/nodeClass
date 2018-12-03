@@ -1,0 +1,130 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+a {
+    text-decoration:none;
+    color: #000;
+}
+.clearFix {
+    *zoom: 1;
+}
+.clearFix::after{
+    content: "";
+    height: 0;
+    display: block;
+    clear: both;
+    overflow: hidden;
+    visibility: hidden;
+}
+.a-inline-block {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+}
+.viwe {
+    width: 1210px;
+    margin: 8px auto;
+}
+.ul-m {
+    list-style-type: none;
+    display: inline-block;
+}
+.ul-m > li{
+    height: 24px;
+    float: left;
+    padding: 0 9px;
+    line-height: 23px;
+    position: relative;
+}
+.ul-m > li::after{
+    content: "|";
+    position: absolute;
+    display: inline-block;
+    right: -1px;
+    top: 1px;
+    font-size: 11px;
+}
+.ul-m > li:last-of-type::after {
+    content: '';
+}
+.f-l{
+float: left;
+}
+.f-r{
+float: right;
+}
+.center-50 {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+/* 初始化样式结束 */
+header{
+    width: 100%;
+    height: 24px;
+    background-color: #ff6600;
+    line-height: 24px;
+}
+header > a:first-of-type {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    box-sizing: border-box;
+    background: url("y18.gif");
+    margin: 2px;
+    border:1px solid #fff;
+}
+header > .title {
+    display: inline-block;
+    margin: 0 2px;
+    font-weight: 800;
+    font-size: 14px;
+}
+header > ul > li >a{
+    font-size: 14px;
+    font-weight: 500;
+}
+header > a:last-of-type{
+    display: inline-block;
+    padding-right:4px; 
+    font-size: 14px;
+    font-weight: 500;
+}
+/* 头部结束 */
+main {
+    background-color: #f6f6ef;
+    width: 100%;
+    height: 100px;
+}
+/* 主内容结束 */
+footer{
+    background-color: #f6f6ef;
+}
+footer > p > .more{
+    color: #828282;
+    font-size: 15px;
+    display: inline-block;
+    margin: 8px 0 8px 36px;
+}
+.footer-main {
+    width: 100%;
+    border-top:2px solid #ff6600;
+}
+.footer-main > ul > li {
+    padding: 0 8px;
+}
+.footer-main > ul > li > a {
+    font-size: 13px;
+}
+.submit {
+    padding: 2px 0 15px;
+}
+.footer-main form {
+    display: inline-block;
+}
+.footer-main form > span {
+    font-size: 15px;
+    color: #828282;
+}
+/* 尾部结束 */
