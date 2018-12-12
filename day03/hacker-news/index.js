@@ -10,12 +10,13 @@
 let context = require('./context.js');
 // 加载路由判断模块
 let router = require('./router.js');
-
+// 加载配置模块
+let config = require('./config.js');
 require('http').createServer(function (req, res) {
     // 模块二
     context(req, res);
     // 模块三
     router(req, res);
-}).listen(8085, function () {
-    console.log('服务器启动成功请访问http://localhost:8085');
+}).listen(config.port, function () {
+    console.log('服务器启动成功请访问http://localhost:'+config.port);
 })

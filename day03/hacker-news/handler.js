@@ -3,6 +3,9 @@ let path = require('path');
 let fs = require('fs');
 let querystring = require('querystring');
 
+// 加载配置模块
+let config = require('./config.js');
+
 // index页面
 module.exports.index = function (res) {
     readNewsData(function (list_n) {
@@ -73,8 +76,7 @@ module.exports.handerErr = function(res){
  * @param {*} callback 回调函数 => 返回数据
  */
 function readNewsData(callback) {
-    let dataPath = path.join(__dirname, "data", "data_test.json");
-    fs.readFile(dataPath, "utf8", function (err, data) {
+    fs.readFile(config.dataPath, "utf8", function (err, data) {
         if (err && err.code != 'ENOENT') throw err;
         let list_n = JSON.parse(data || '[]');
         callback(list_n);
@@ -86,8 +88,7 @@ function readNewsData(callback) {
  * @param {*} callback 回调函数 <= 写入逻辑代码 
  */
 function writeNewsData(list, callback) {
-    let dataPath = path.join(__dirname, "data", "data_test.json");
-    fs.writeFile(dataPath, list, "utf8", function (err) {
+    fs.writeFile(config.dataPath, list, "utf8", function (err) {
         if (err) throw err;
         // 直接调用回调函数 在回调函数中写业务逻辑
         callback();
